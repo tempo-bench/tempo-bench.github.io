@@ -1,14 +1,17 @@
-# Nerfies
+# TEMPO
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This repository hosts the website for the TEMPO benchmark.
 
-If you find Nerfies useful for your work please cite:
+Links:
+- Code: https://github.com/tempo-bench/Tempo
+- Dataset: https://huggingface.co/datasets/tempo26/Tempo
+
+If you find TEMPO useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{tempo2025,
+  title     = {TEMPO: A Realistic Multi-Domain Benchmark for Temporal Reasoning-Intensive Retrieval},
+  author    = {Abdelrahman Abdallah and Mohammed Ali and Muhammad Abdul-Mageed and Adam Jatowt},
+  year      = {2025}
 }
 ```
 
