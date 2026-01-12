@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TEMPO is a realistic multi-domain benchmark for temporal reasoning-intensive retrieval across 13 domains.">
+  <meta name="keywords" content="TEMPO, temporal reasoning, retrieval, benchmark, dataset, RAG">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TEMPO: Temporal Reasoning-Intensive Retrieval Benchmark</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item tempo-brand" href="#top">TEMPO</a>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="#abstract">Abstract</a>
+      <a class="navbar-item" href="#overview">Overview</a>
+      <a class="navbar-item" href="#tasks">Tasks</a>
+      <a class="navbar-item" href="#metrics">Metrics</a>
+      <a class="navbar-item" href="#results">Results</a>
+      <a class="navbar-item" href="#resources">Resources</a>
+      <a class="navbar-item" href="#BibTeX">BibTeX</a>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero is-tempo" id="top">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <p class="publication-venue">Benchmark Dataset</p>
+      <h1 class="title is-1 publication-title">TEMPO: A Realistic Multi-Domain Benchmark for Temporal Reasoning-Intensive Retrieval</h1>
+      <p class="subtitle is-4">Temporal reasoning meets reasoning-intensive retrieval across 13 domains.</p>
+      <div class="is-size-5 publication-authors">
+        <span class="author-block">Abdelrahman Abdallah<sup>1</sup>,</span>
+        <span class="author-block">Mohammed Ali<sup>1</sup>,</span>
+        <span class="author-block">Muhammad Abdul-Mageed<sup>2,3</sup>,</span>
+        <span class="author-block">Adam Jatowt<sup>1</sup></span>
+      </div>
+      <div class="is-size-5 publication-authors">
+        <span class="author-block"><sup>1</sup>University of Innsbruck,</span>
+        <span class="author-block"><sup>2</sup>University of British Columbia,</span>
+        <span class="author-block"><sup>3</sup>MBZUAI - Mohamed bin Zayed University of Artificial Intelligence</span>
+      </div>
+
+      <div class="column has-text-centered">
+        <div class="publication-links">
+          <span class="link-block">
+            <a class="external-link button is-normal is-rounded is-dark is-disabled" aria-disabled="true">
+              <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/tempo-bench/Tempo"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://huggingface.co/datasets/tempo26/Tempo"
+               class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fas fa-database"></i>
+              </span>
+              <span>Dataset</span>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="columns is-mobile is-multiline tempo-stats">
+        <div class="column is-half-mobile is-one-quarter-desktop">
+          <div class="tempo-stat-card">
+            <p class="tempo-stat">1,730</p>
+            <p class="tempo-stat-label">Queries</p>
+          </div>
+        </div>
+        <div class="column is-half-mobile is-one-quarter-desktop">
+          <div class="tempo-stat-card">
+            <p class="tempo-stat">13</p>
+            <p class="tempo-stat-label">Domains</p>
+          </div>
+        </div>
+        <div class="column is-half-mobile is-one-quarter-desktop">
+          <div class="tempo-stat-card">
+            <p class="tempo-stat">3,976</p>
+            <p class="tempo-stat-label">Steps</p>
+          </div>
+        </div>
+        <div class="column is-half-mobile is-one-quarter-desktop">
+          <div class="tempo-stat-card">
+            <p class="tempo-stat">1.65M</p>
+            <p class="tempo-stat-label">Documents</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="abstract">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Existing temporal QA benchmarks focus on fact-seeking queries from news corpora, while
+            reasoning-intensive retrieval benchmarks lack temporal grounding. Real-world information
+            needs often require reasoning about temporal evolution and synthesizing evidence across
+            time periods. We introduce TEMPO, the first benchmark combining temporal reasoning with
+            reasoning-intensive retrieval across 13 domains.
+          </p>
+          <p>
+            TEMPO features 1,730 complex queries, 3,976 step-wise retrieval plans mapped to gold
+            documents, and novel temporal metrics including Temporal Coverage@k and Temporal
+            Precision@k. Evaluation of 12 retrieval systems reveals substantial challenges: the best
+            model achieves only 32.0 NDCG@10 and 71.4% Temporal Coverage@10, highlighting the need
+            for temporally grounded retrieval and RAG systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="intro-figure">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">TEMPO Overview</h2>
+        <p class="content">
+          TEMPO combines temporal reasoning with reasoning-intensive retrieval, supporting
+          cross-period analysis, step-wise planning, and temporal metrics.
+        </p>
+        <figure class="tempo-figure">
+          <img src="./static/images/intro.jpg" alt="TEMPO overview diagram.">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="overview">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">What Makes TEMPO Different</h2>
+      </div>
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <div class="tempo-card">
+          <h3 class="title is-5">Temporal Reasoning</h3>
+          <p>
+            Queries require temporal evolution, cross-period comparison, and temporal dependency
+            resolution across pre-1900 to 2020+.
+          </p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="tempo-card">
+          <h3 class="title is-5">Step-Wise Planning</h3>
+          <p>
+            Each query includes a retrieval plan with step-specific gold documents for multi-hop
+            evaluation across time periods.
+          </p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="tempo-card">
+          <h3 class="title is-5">Temporal Metrics</h3>
+          <p>
+            New metrics measure temporal relevance and coverage so systems must retrieve evidence
+            aligned with required time periods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">Domains</h3>
+        <p class="content">
+          Blockchain (Bitcoin, Cardano, IOTA, Monero), Social Sciences (Economics, Law, Politics,
+          History), Applied (Quantitative Finance, Travel, Workplace, Genealogy), and STEM
+          (History of Science and Mathematics).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="leaderboard">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Leaderboard</h2>
+    <div class="tempo-table-block">
+      <h3 class="title is-4">Query to Documents (NDCG@10 Avg.)</h3>
+      <div class="table-container">
+        <table class="table is-fullwidth tempo-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="has-text-right">Avg.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>DiVeR</td><td class="has-text-right">32.0</td></tr>
+            <tr><td>E5</td><td class="has-text-right">30.4</td></tr>
+            <tr><td>SFR</td><td class="has-text-right">30.0</td></tr>
+            <tr><td>GritLM</td><td class="has-text-right">27.2</td></tr>
+            <tr><td>ReasonIR</td><td class="has-text-right">27.2</td></tr>
+            <tr><td>SBERT</td><td class="has-text-right">24.9</td></tr>
+            <tr><td>Inst-L</td><td class="has-text-right">24.8</td></tr>
+            <tr><td>Rader</td><td class="has-text-right">24.2</td></tr>
+            <tr><td>Qwen</td><td class="has-text-right">22.8</td></tr>
+            <tr><td>BGE</td><td class="has-text-right">22.0</td></tr>
+            <tr><td>Contriever</td><td class="has-text-right">21.4</td></tr>
+            <tr><td>BM25</td><td class="has-text-right">10.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tempo-table-block">
+      <h3 class="title is-4">Step-Wise Retrieval (NDCG@10 Avg.)</h3>
+      <p class="content is-size-6">
+        Provide the per-model averages for step-wise retrieval and I will fill this table.
+      </p>
+      <div class="table-container">
+        <table class="table is-fullwidth tempo-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th class="has-text-right">Avg.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>DiVeR</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>ReasonIR</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>Rader</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>E5</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>SFR</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>GritLM</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>Inst-L</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>Qwen</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>BGE</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>Contriever</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>SBERT</td><td class="has-text-right">TBD</td></tr>
+            <tr><td>BM25</td><td class="has-text-right">TBD</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tasks">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Tasks</h2>
+    <div class="columns">
+      <div class="column">
+        <div class="tempo-callout">
+          <h3 class="title is-5">Task 1: Query to Documents</h3>
+          <p>
+            Retrieve temporally relevant documents for each query, ensuring evidence aligns with
+            required time periods and supports cross-period analysis.
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="tempo-callout">
+          <h3 class="title is-5">Task 2: Query to Step to Documents</h3>
+          <p>
+            Multi-step retrieval where each step targets a temporal slice or reasoning sub-goal,
+            with gold documents mapped to each step.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="metrics">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Temporal Evaluation Metrics</h2>
+    <div class="content">
+      <p>
+        Traditional IR metrics miss temporal grounding. TEMPO introduces four temporal metrics
+        computed with LLM-as-judge labels for temporal relevance and period coverage.
+      </p>
+      <div class="columns is-multiline">
+        <div class="column is-half">
+          <div class="tempo-metric">
+            <p class="tempo-metric-title">TP@k (Temporal Precision)</p>
+            <p class="tempo-metric-desc">Position-weighted precision of temporally relevant documents.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="tempo-metric">
+            <p class="tempo-metric-title">TR@k (Temporal Relevance)</p>
+            <p class="tempo-metric-desc">Fraction of top-k results judged temporally relevant.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="tempo-metric">
+            <p class="tempo-metric-title">TC@k (Temporal Coverage)</p>
+            <p class="tempo-metric-desc">Coverage of required time periods in top-k results.</p>
+          </div>
+        </div>
+        <div class="column is-half">
+          <div class="tempo-metric">
+            <p class="tempo-metric-title">NDCG|FC@k</p>
+            <p class="tempo-metric-desc">NDCG computed only when full temporal coverage is achieved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Results Snapshot</h2>
+    <div class="columns is-multiline">
+      <div class="column is-one-third">
+        <div class="tempo-highlight">
+          <p class="tempo-highlight-title">Best Overall</p>
+          <p class="tempo-highlight-value">32.0 NDCG@10</p>
+          <p class="tempo-highlight-meta">DiVeR (avg. across 13 domains)</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="tempo-highlight">
+          <p class="tempo-highlight-title">Temporal Coverage</p>
+          <p class="tempo-highlight-value">71.4% TC@10</p>
+          <p class="tempo-highlight-meta">DiVeR, top-k results</p>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <div class="tempo-highlight">
+          <p class="tempo-highlight-title">Dataset Scale</p>
+          <p class="tempo-highlight-value">1.65M Docs</p>
+          <p class="tempo-highlight-meta">Across 13 domains</p>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <p>
+        Reasoning-enhanced retrievers lead performance, but results remain far from saturated. Dense
+        retrievers improve over BM25, yet cross-period queries remain challenging, highlighting the
+        need for temporal grounding in retrieval and RAG systems.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resources">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Resources</h2>
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <div class="content">
+          <p>
+            Code, data, and evaluation scripts are available below.
+          </p>
+        </div>
+        <div class="buttons">
+          <a class="button is-dark is-rounded" href="https://github.com/tempo-bench/Tempo">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>GitHub</span>
+          </a>
+          <a class="button is-dark is-rounded" href="https://huggingface.co/datasets/tempo26/Tempo">
+            <span class="icon"><i class="fas fa-database"></i></span>
+            <span>Hugging Face</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{tempo2025,
+  title     = {TEMPO: A Realistic Multi-Domain Benchmark for Temporal Reasoning-Intensive Retrieval},
+  author    = {Tempo Benchmark Team},
+  year      = {2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/tempo-bench/Tempo">
+        <i class="fab fa-github"></i>
+      </a>
+      <a class="icon-link" href="https://huggingface.co/datasets/tempo26/Tempo">
+        <i class="fas fa-database"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

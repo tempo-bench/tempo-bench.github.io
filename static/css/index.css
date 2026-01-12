@@ -1,0 +1,155 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.publication-title,
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+  margin: 0 auto 0.5rem;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.tempo-brand {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hero.is-tempo {
+  background: radial-gradient(circle at top left, #f6efe2 0%, #f3f1ea 40%, #e9f0ec 100%);
+}
+
+.tempo-stats {
+  margin-top: 1.5rem;
+}
+
+.tempo-stat-card {
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(20, 41, 33, 0.08);
+}
+
+.tempo-stat {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.tempo-stat-label {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tempo-card,
+.tempo-callout,
+.tempo-highlight,
+.tempo-metric {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(20, 41, 33, 0.08);
+  height: 100%;
+}
+
+.tempo-callout {
+  border-left: 4px solid #1f6e58;
+}
+
+.tempo-highlight {
+  background: #f7f4ec;
+}
+
+.tempo-highlight-title {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  color: #5b5b5b;
+}
+
+.tempo-highlight-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.3rem 0;
+}
+
+.tempo-highlight-meta {
+  color: #5b5b5b;
+  font-size: 0.95rem;
+}
+
+.tempo-metric-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.tempo-metric-desc {
+  color: #4a4a4a;
+}
+
+.tempo-figure {
+  margin: 1.5rem 0;
+}
+
+.tempo-figure img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(20, 41, 33, 0.12);
+}
+
+.tempo-table-block {
+  margin-bottom: 2.5rem;
+}
+
+.tempo-table {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tempo-table thead {
+  background: #f7f4ec;
+}
+
+.tempo-table th,
+.tempo-table td {
+  padding: 0.85rem 1rem;
+}
+
+.tempo-table tbody tr:nth-child(odd) {
+  background: #fcfbf8;
+}
+
+.button.is-disabled {
+  pointer-events: none;
+  opacity: 0.55;
+}
