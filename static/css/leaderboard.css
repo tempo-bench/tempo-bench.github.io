@@ -1,0 +1,14 @@
+.performanceTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.performanceTable th, .performanceTable td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.performanceTable th {
+  background-color: #f2f2f2;
+}

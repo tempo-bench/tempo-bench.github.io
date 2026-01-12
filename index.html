@@ -12,10 +12,13 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
   <link rel="icon" href="./static/images/logo.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -362,17 +365,17 @@
         <section class="section" id="leaderboard">
           <div class="container is-max-desktop">
             <h2 class="title is-3">Leaderboard</h2>
-            <div class="tabs is-centered">
+            <div class="tabs is-centered example_lst">
               <ul>
-                <li class="is-active" data-tab="query-to-doc-leaderboard"><a>Query to Documents</a></li>
-                <li data-tab="step-wise-leaderboard"><a>Step-Wise Retrieval</a></li>
+                <li class="is-active" data-tab="query-to-doc-leaderboard"><a>Short document</a></li>
+                <li data-tab="step-wise-leaderboard"><a>Long document</a></li>
               </ul>
             </div>
-            <div id="query-to-doc-leaderboard" class="tab-content">
+            <div id="query-to-doc-leaderboard" class="tab-content lib_examples">
               <div class="tempo-table-block">
                 <h3 class="title is-4">Query to Documents (NDCG@10 Avg.)</h3>
                 <div class="table-container">
-                  <table class="table is-fullwidth tempo-table">
+                  <table class="table is-fullwidth performanceTable">
                     <thead>
                       <tr>
                         <th>Rank</th>
@@ -398,14 +401,14 @@
                 </div>
               </div>
             </div>
-            <div id="step-wise-leaderboard" class="tab-content" style="display: none;">
+            <div id="step-wise-leaderboard" class="tab-content lib_examples" style="display: none;">
               <div class="tempo-table-block">
                 <h3 class="title is-4">Step-Wise Retrieval (NDCG@10 Avg.)</h3>
                 <p class="content is-size-6">
                   Provide the per-model averages for step-wise retrieval and I will fill this table.
                 </p>
                 <div class="table-container">
-                  <table class="table is-fullwidth tempo-table">
+                  <table class="table is-fullwidth performanceTable">
                     <thead>
                       <tr>
                         <th>Rank</th>
