@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="TEMPO Detailed Leaderboard">
+  <meta name="keywords" content="TEMPO, leaderboard, benchmark, retrieval">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TEMPO Benchmark - Detailed Leaderboard</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item tempo-brand" href="index.html">TEMPO</a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item" href="index.html#abstract">Abstract</a>
+        <a class="navbar-item" href="index.html#resources">Resources</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-tempo">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-2">Detailed Leaderboard</h1>
+        <p class="subtitle is-5">Comprehensive breakdown of performance across 13 domains and temporal metrics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="leaderboard">
+    <div class="container">
+
+      <!-- Navigation Tabs (can add later if needed, for now separating by headers) -->
+
+      <div id="leaderboard-ndcg">
+        <h3 class="title is-4">NDCG@10 Performance Breakdown</h3>
+        <p class="content">
+          Performance across 13 domains: Blockchain (Bitcoin, Cardano, Iota, Monero), Social Sciences (Economics, Law,
+          Politics, History), Applied (Quant, Travel, Workplace, Genealogy), and STEM (HSM).
+          <br>
+          <span class="tag is-light">Best in <strong>bold</strong></span>
+          <span class="tag is-light">Second best <u>underlined</u></span>
+        </p>
+
+        <div class="table-container">
+          <table class="table performanceTable is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th><a href="https://arxiv.org/abs/2112.09118" target="_blank">Contriever</a></th>
+                <th><a href="https://github.com/FlagOpen/FlagEmbedding" target="_blank">BGE</a></th>
+                <th><a href="https://arxiv.org/abs/2212.09741" target="_blank">Inst-L</a></th>
+                <th><a href="https://www.sbert.net/" target="_blank">SBERT</a></th>
+                <th><a href="https://github.com/QwenLM/Qwen" target="_blank">Qwen</a></th>
+                <th><a href="https://arxiv.org/abs/2402.09906" target="_blank">GritLM</a></th>
+                <th><a href="https://arxiv.org/abs/2212.03511" target="_blank">E5</a></th>
+                <th><a href="https://blog.salesforceairesearch.com/sfr-embedding-mistral/" target="_blank">SFR</a></th>
+                <th><a href="https://arxiv.org/abs/2505.18405" target="_blank">Rader</a></th>
+                <th><a href="https://doi.org/10.48550/arXiv.2504.20595" target="_blank">ReasonIR</a></th>
+                <th><a href="https://arxiv.org/abs/2508.07995" target="_blank">DiVeR</a></th>
+                <th style="background-color: #eef6fc;">Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Blockchain -->
+              <tr class="is-selected">
+                <td colspan="12" style="text-align: center;"><em>Blockchain</em></td>
+              </tr>
+              <tr>
+                <td><strong>Bitcoin</strong></td>
+                <td>13.3</td>
+                <td>14.4</td>
+                <td>15.7</td>
+                <td>14.3</td>
+                <td>11.4</td>
+                <td><strong>19.1</strong></td>
+                <td>16.3</td>
+                <td><u>17.6</u></td>
+                <td>14.9</td>
+                <td>16.3</td>
+                <td>17.4</td>
+                <td style="background-color: #eef6fc;">15.5</td>
+              </tr>
+              <tr>
+                <td><strong>Cardano</strong></td>
+                <td>12.1</td>
+                <td>13.1</td>
+                <td>14.6</td>
+                <td>21.4</td>
+                <td>20.6</td>
+                <td>21.7</td>
+                <td><strong>35.7</strong></td>
+                <td>28.1</td>
+                <td>18.6</td>
+                <td>22.9</td>
+                <td><u>29.3</u></td>
+                <td style="background-color: #eef6fc;">21.6</td>
+              </tr>
+              <tr>
+                <td><strong>Iota</strong></td>
+                <td><u>38.3</u></td>
+                <td>36.1</td>
+                <td>34.3</td>
+                <td>33.2</td>
+                <td>28.6</td>
+                <td>36.6</td>
+                <td><strong>41.7</strong></td>
+                <td>37.1</td>
+                <td>19.2</td>
+                <td><strong>41.7</strong></td>
+                <td>38.2</td>
+                <td style="background-color: #eef6fc;">35.0</td>
+              </tr>
+              <tr>
+                <td><strong>Monero</strong></td>
+                <td>9.9</td>
+                <td>14.5</td>
+                <td>16.9</td>
+                <td>15.1</td>
+                <td>11.0</td>
+                <td>14.7</td>
+                <td>20.0</td>
+                <td><strong>23.7</strong></td>
+                <td><u>21.0</u></td>
+                <td>19.6</td>
+                <td>20.3</td>
+                <td style="background-color: #eef6fc;">16.9</td>
+              </tr>
+
+              <!-- Social Sci -->
+              <tr class="is-selected">
+                <td colspan="12" style="text-align: center;"><em>Social Sciences</em></td>
+              </tr>
+              <tr>
+                <td><strong>Economics</strong></td>
+                <td>16.3</td>
+                <td>12.6</td>
+                <td>17.5</td>
+                <td>15.3</td>
+                <td>17.1</td>
+                <td>17.2</td>
+                <td><u>25.0</u></td>
+                <td>21.9</td>
+                <td>22.7</td>
+                <td>20.0</td>
+                <td><strong>27.8</strong></td>
+                <td style="background-color: #eef6fc;">19.4</td>
+              </tr>
+              <tr>
+                <td><strong>History</strong></td>
+                <td>26.5</td>
+                <td>27.4</td>
+                <td>28.5</td>
+                <td>28.7</td>
+                <td>25.6</td>
+                <td>27.3</td>
+                <td>28.7</td>
+                <td><u>32.4</u></td>
+                <td>25.8</td>
+                <td>34.3</td>
+                <td><strong>34.5</strong></td>
+                <td style="background-color: #eef6fc;">28.9</td>
+              </tr>
+              <tr>
+                <td><strong>Law</strong></td>
+                <td>28.1</td>
+                <td>31.9</td>
+                <td>37.3</td>
+                <td>33.8</td>
+                <td>32.0</td>
+                <td>38.3</td>
+                <td>34.0</td>
+                <td><strong>40.8</strong></td>
+                <td>33.5</td>
+                <td>37.9</td>
+                <td><u>40.4</u></td>
+                <td style="background-color: #eef6fc;">35.3</td>
+              </tr>
+              <tr>
+                <td><strong>Politics</strong></td>
+                <td>31.6</td>
+                <td>28.2</td>
+                <td>32.6</td>
+                <td>34.6</td>
+                <td>38.1</td>
+                <td>41.4</td>
+                <td><strong>47.9</strong></td>
+                <td>44.9</td>
+                <td>32.4</td>
+                <td>35.4</td>
+                <td><u>45.5</u></td>
+                <td style="background-color: #eef6fc;">37.5</td>
+              </tr>
+
+              <!-- Applied -->
+              <tr class="is-selected">
+                <td colspan="12" style="text-align: center;"><em>Applied</em></td>
+              </tr>
+              <tr>
+                <td><strong>Genealogy</strong></td>
+                <td>24.9</td>
+                <td>22.0</td>
+                <td>24.6</td>
+                <td>23.5</td>
+                <td>25.3</td>
+                <td>26.9</td>
+                <td><u>33.5</u></td>
+                <td>31.7</td>
+                <td>18.7</td>
+                <td>30.3</td>
+                <td><strong>35.6</strong></td>
+                <td style="background-color: #eef6fc;">27.0</td>
+              </tr>
+              <tr>
+                <td><strong>Quant</strong></td>
+                <td>11.1</td>
+                <td>11.7</td>
+                <td>14.6</td>
+                <td>15.7</td>
+                <td>12.7</td>
+                <td>21.6</td>
+                <td>13.8</td>
+                <td>16.8</td>
+                <td><strong>27.8</strong></td>
+                <td>19.5</td>
+                <td><u>27.2</u></td>
+                <td style="background-color: #eef6fc;">17.5</td>
+              </tr>
+              <tr>
+                <td><strong>Travel</strong></td>
+                <td>23.7</td>
+                <td>23.8</td>
+                <td>25.0</td>
+                <td>27.3</td>
+                <td>22.0</td>
+                <td>25.0</td>
+                <td><u>28.3</u></td>
+                <td><strong>29.7</strong></td>
+                <td>26.1</td>
+                <td>21.4</td>
+                <td>26.8</td>
+                <td style="background-color: #eef6fc;">25.4</td>
+              </tr>
+              <tr>
+                <td><strong>Workplace</strong></td>
+                <td>23.9</td>
+                <td>27.2</td>
+                <td>36.2</td>
+                <td>34.6</td>
+                <td>30.3</td>
+                <td>30.8</td>
+                <td>32.9</td>
+                <td>31.6</td>
+                <td><u>36.6</u></td>
+                <td>30.0</td>
+                <td><strong>42.6</strong></td>
+                <td style="background-color: #eef6fc;">32.4</td>
+              </tr>
+
+              <!-- STEM -->
+              <tr class="is-selected">
+                <td colspan="12" style="text-align: center;"><em>STEM</em></td>
+              </tr>
+              <tr>
+                <td><strong>HSM</strong></td>
+                <td>18.9</td>
+                <td>23.2</td>
+                <td>24.4</td>
+                <td>26.1</td>
+                <td>21.3</td>
+                <td>33.4</td>
+                <td><strong>37.7</strong></td>
+                <td><u>33.5</u></td>
+                <td>16.9</td>
+                <td>24.7</td>
+                <td>31.0</td>
+                <td style="background-color: #eef6fc;">26.5</td>
+              </tr>
+
+              <!-- AVG -->
+              <tr style="border-top: 2px solid #dbdbdb;">
+                <td><strong>Average</strong></td>
+                <td>21.4</td>
+                <td>22.0</td>
+                <td>24.8</td>
+                <td>24.9</td>
+                <td>22.8</td>
+                <td>27.2</td>
+                <td><u>30.4</u></td>
+                <td>30.0</td>
+                <td>24.2</td>
+                <td>27.2</td>
+                <td><strong>32.0</strong></td>
+                <td style="background-color: #eef6fc;"><strong>26.2</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="leaderboard-temporal" style="margin-top: 3rem;">
+        <h3 class="title is-4">Temporal Evaluation Metrics</h3>
+        <p class="content">
+          <strong>TP@10</strong>: Temporal Precision; <strong>TR@10</strong>: Temporal Relevance;
+          <strong>TC@10</strong>: Temporal Coverage; <strong>NDCG|FC@10</strong>: NDCG conditioned on full coverage.
+        </p>
+        <div class="table-container">
+          <table class="table performanceTable is-bordered is-striped is-narrow is-hoverable"
+            style="width: auto; min-width: 50%;">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Type</th>
+                <th>TP@10</th>
+                <th>TR@10</th>
+                <th>TC@10</th>
+                <th>NDCG|FC@10</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="6" style="background-color: #f5f5f5;"><em>Sparse Model</em></td>
+              </tr>
+              <tr>
+                <td><strong>BM25</strong></td>
+                <td><span class="tag is-sparse">Sparse</span></td>
+                <td>24.0</td>
+                <td>11.1</td>
+                <td>32.8</td>
+                <td>22.5</td>
+              </tr>
+
+              <tr>
+                <td colspan="6" style="background-color: #f5f5f5;"><em>Open-sourced Models (&lt;1B)</em></td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/FlagOpen/FlagEmbedding" target="_blank"><strong>BGE</strong></a></td>
+                <td><span class="tag is-dense-small">Dense &lt;1B</span></td>
+                <td>53.7</td>
+                <td>34.0</td>
+                <td>66.1</td>
+                <td>25.3</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2112.09118" target="_blank"><strong>Contriever</strong></a></td>
+                <td><span class="tag is-dense-small">Dense &lt;1B</span></td>
+                <td>49.6</td>
+                <td>30.3</td>
+                <td>64.1</td>
+                <td>26.2</td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2212.09741" target="_blank"><strong>Inst-L</strong></a></td>
+                <td><span class="tag is-dense-small">Dense &lt;1B</span></td>
+                <td>53.1</td>
+                <td>33.8</td>
+                <td>66.9</td>
+                <td>25.8</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.sbert.net/" target="_blank"><strong>SBERT</strong></a></td>
+                <td><span class="tag is-dense-small">Dense &lt;1B</span></td>
+                <td>54.1</td>
+                <td>35.0</td>
+                <td>67.2</td>
+                <td>26.9</td>
+              </tr>
+
+              <tr>
+                <td colspan="6" style="background-color: #f5f5f5;"><em>Open-sourced Models (&gt;1B)</em></td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2212.03511" target="_blank"><strong>E5</strong></a></td>
+                <td><span class="tag is-dense-large">Dense >1B</span></td>
+                <td>53.5</td>
+                <td>31.1</td>
+                <td>63.2</td>
+                <td><strong>33.4</strong></td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2402.09906" target="_blank"><strong>GritLM</strong></a></td>
+                <td><span class="tag is-dense-large">Dense >1B</span></td>
+                <td>53.8</td>
+                <td>35.0</td>
+                <td>69.1</td>
+                <td>27.2</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/QwenLM/Qwen" target="_blank"><strong>Qwen</strong></a></td>
+                <td><span class="tag is-dense-large">Dense >1B</span></td>
+                <td>46.2</td>
+                <td>28.8</td>
+                <td>61.0</td>
+                <td>29.9</td>
+              </tr>
+
+              <tr>
+                <td colspan="6" style="background-color: #f5f5f5;"><em>Reasoning Models (&gt;1B)</em></td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2508.07995" target="_blank"><strong>DiVeR</strong></a></td>
+                <td><span class="tag is-reasoning">Reasoning</span></td>
+                <td><strong>62.0</strong></td>
+                <td><strong>41.3</strong></td>
+                <td><u>71.4</u></td>
+                <td><u>32.5</u></td>
+              </tr>
+              <tr>
+                <td><a href="https://arxiv.org/abs/2505.18405" target="_blank"><strong>Rader</strong></a></td>
+                <td><span class="tag is-reasoning">Reasoning</span></td>
+                <td>50.6</td>
+                <td>32.3</td>
+                <td>66.1</td>
+                <td>26.1</td>
+              </tr>
+              <tr>
+                <td><a href="https://doi.org/10.48550/arXiv.2504.20595" target="_blank"><strong>ReasonIR</strong></a>
+                </td>
+                <td><span class="tag is-reasoning">Reasoning</span></td>
+                <td><u>57.4</u></td>
+                <td><u>38.2</u></td>
+                <td><strong>72.4</strong></td>
+                <td>28.8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dataset Insights Section -->
+  <section class="section has-background-light">
+    <div class="container">
+      <h2 class="title is-3" id="insights">Dataset Insights</h2>
+      <div class="columns">
+        <div class="column is-6">
+          <div class="infoCard">
+            <div class="infoHeadline">
+              <h2>Temporal Reasoning Classes</h2>
+            </div>
+            <div class="infoBody">
+              <p>TEMPO queries are classified into 9 distinct temporal reasoning tasks:</p>
+              <div class="content is-small">
+                <ol>
+                  <li><strong>Event Analysis & Localization (EAL)</strong>: Pinpointing event times.</li>
+                  <li><strong>Time Period Contextualization (TPC)</strong>: Situating phenomena in history.</li>
+                  <li><strong>Origins & Evolution Comparative (OEC)</strong>: Tracking evolution over time.</li>
+                  <li><strong>Trends & Cross-Period Comparison (TCP)</strong>: Comparing states across eras.</li>
+                  <li><strong>Event Verification & Authenticity (EVA)</strong>: Verifying claims/dates.</li>
+                  <li><strong>Materials & Artifacts Provenance (MAP)</strong>: Dating physical items.</li>
+                  <li><strong>Sources & Methods Documentation (SMD)</strong>: Analyzing historical methods.</li>
+                  <li><strong>Causation Analysis (CAU)</strong>: Temporal cause-effect.</li>
+                  <li><strong>Historical Attribution & Context (HAC)</strong>: Correctly attributing eras.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-6">
+          <div class="infoCard">
+            <div class="infoHeadline">
+              <h2>Retrieval Plan Complexity</h2>
+            </div>
+            <div class="infoBody">
+              <p>Average number of retrieval steps required per domain (proxy for difficulty).</p>
+              <table class="table is-striped is-fullwidth is-narrow" style="background: transparent;">
+                <thead>
+                  <tr>
+                    <th>Domain</th>
+                    <th>Avg. Steps</th>
+                    <th>Domain</th>
+                    <th>Avg. Steps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Genealogy</td>
+                    <td><strong>3.78</strong></td>
+                    <td>HSM</td>
+                    <td>3.25</td>
+                  </tr>
+                  <tr>
+                    <td>History</td>
+                    <td>3.42</td>
+                    <td>Law</td>
+                    <td>3.23</td>
+                  </tr>
+                  <tr>
+                    <td>Politics</td>
+                    <td>3.35</td>
+                    <td>Iota</td>
+                    <td>3.20</td>
+                  </tr>
+                  <tr>
+                    <td>Economics</td>
+                    <td>3.08</td>
+                    <td>Travel</td>
+                    <td>3.11</td>
+                  </tr>
+                  <tr>
+                    <td>Bitcoin</td>
+                    <td>2.93</td>
+                    <td>Cardano</td>
+                    <td>2.84</td>
+                  </tr>
+                  <tr>
+                    <td>Monero</td>
+                    <td>2.72</td>
+                    <td>Quant</td>
+                    <td>2.68</td>
+                  </tr>
+                  <tr>
+                    <td>Workplace</td>
+                    <td>2.42</td>
+                    <td><strong>Overall</strong></td>
+                    <td><strong>3.28</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://github.com/tempo-bench/Tempo">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="icon-link" href="https://huggingface.co/datasets/tempo26/Tempo">
+          <i class="fas fa-database"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Template adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

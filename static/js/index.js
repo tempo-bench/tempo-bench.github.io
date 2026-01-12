@@ -11,6 +11,6 @@ $(document).ready(function() {
     $(this).addClass('is-active');
 
     $('.tab-content').hide();
-    $('#' + tab).show();
+    $('#' + tab + '-content').show();
   });
 });
