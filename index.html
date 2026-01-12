@@ -129,72 +129,6 @@
 <section class="section">
   <div class="container">
     <div class="columns">
-      <div class="column is-one-third">
-        <section class="section" id="leaderboard">
-          <div class="container is-max-desktop">
-            <h2 class="title is-3">Leaderboard</h2>
-            <div class="tempo-table-block">
-              <h3 class="title is-4">Query to Documents (NDCG@10 Avg.)</h3>
-              <div class="table-container">
-                <table class="table is-fullwidth tempo-table">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Retriever</th>
-                      <th class="has-text-right">Score</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>1</td><td>DiVeR</td><td class="has-text-right">32.0</td></tr>
-                    <tr><td>2</td><td>E5</td><td class="has-text-right">30.4</td></tr>
-                    <tr><td>3</td><td>SFR</td><td class="has-text-right">30.0</td></tr>
-                    <tr><td>4</td><td>GritLM</td><td class="has-text-right">27.2</td></tr>
-                    <tr><td>5</td><td>ReasonIR</td><td class="has-text-right">27.2</td></tr>
-                    <tr><td>6</td><td>SBERT</td><td class="has-text-right">24.9</td></tr>
-                    <tr><td>7</td><td>Inst-L</td><td class="has-text-right">24.8</td></tr>
-                    <tr><td>8</td><td>Rader</td><td class="has-text-right">24.2</td></tr>
-                    <tr><td>9</td><td>Qwen</td><td class="has-text-right">22.8</td></tr>
-                    <tr><td>10</td><td>BGE</td><td class="has-text-right">22.0</td></tr>
-                    <tr><td>11</td><td>Contriever</td><td class="has-text-right">21.4</td></tr>
-                    <tr><td>12</td><td>BM25</td><td class="has-text-right">10.8</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="tempo-table-block">
-              <h3 class="title is-4">Step-Wise Retrieval (NDCG@10 Avg.)</h3>
-              <p class="content is-size-6">
-                Provide the per-model averages for step-wise retrieval and I will fill this table.
-              </p>
-              <div class="table-container">
-                <table class="table is-fullwidth tempo-table">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Retriever</th>
-                      <th class="has-text-right">Score</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>1</td><td>DiVeR</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>2</td><td>ReasonIR</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>3</td><td>Rader</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>4</td><td>E5</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>5</td><td>SFR</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>6</td><td>GritLM</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>7</td><td>Inst-L</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>8</td><td>Qwen</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>9</td><td>BGE</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>10</td><td>Contriever</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>11</td><td>SBERT</td><td class="has-text-right">TBD</td></tr>
-                    <tr><td>12</td><td>BM25</td><td class="has-text-right">TBD</td></tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
       <div class="column">
         <section class="section" id="abstract">
           <div class="container is-max-desktop">
@@ -421,6 +355,82 @@
   author    = {Tempo Benchmark Team},
   year      = {2025}
 }</code></pre>
+          </div>
+        </section>
+      </div>
+      <div class="column is-one-third">
+        <section class="section" id="leaderboard">
+          <div class="container is-max-desktop">
+            <h2 class="title is-3">Leaderboard</h2>
+            <div class="tabs is-centered">
+              <ul>
+                <li class="is-active" data-tab="query-to-doc-leaderboard"><a>Query to Documents</a></li>
+                <li data-tab="step-wise-leaderboard"><a>Step-Wise Retrieval</a></li>
+              </ul>
+            </div>
+            <div id="query-to-doc-leaderboard" class="tab-content">
+              <div class="tempo-table-block">
+                <h3 class="title is-4">Query to Documents (NDCG@10 Avg.)</h3>
+                <div class="table-container">
+                  <table class="table is-fullwidth tempo-table">
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Retriever</th>
+                        <th class="has-text-right">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>1</td><td>DiVeR</td><td class="has-text-right">32.0</td></tr>
+                      <tr><td>2</td><td>E5</td><td class="has-text-right">30.4</td></tr>
+                      <tr><td>3</td><td>SFR</td><td class="has-text-right">30.0</td></tr>
+                      <tr><td>4</td><td>GritLM</td><td class="has-text-right">27.2</td></tr>
+                      <tr><td>5</td><td>ReasonIR</td><td class="has-text-right">27.2</td></tr>
+                      <tr><td>6</td><td>SBERT</td><td class="has-text-right">24.9</td></tr>
+                      <tr><td>7</td><td>Inst-L</td><td class="has-text-right">24.8</td></tr>
+                      <tr><td>8</td><td>Rader</td><td class="has-text-right">24.2</td></tr>
+                      <tr><td>9</td><td>Qwen</td><td class="has-text-right">22.8</td></tr>
+                      <tr><td>10</td><td>BGE</td><td class="has-text-right">22.0</td></tr>
+                      <tr><td>11</td><td>Contriever</td><td class="has-text-right">21.4</td></tr>
+                      <tr><td>12</td><td>BM25</td><td class="has-text-right">10.8</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="step-wise-leaderboard" class="tab-content" style="display: none;">
+              <div class="tempo-table-block">
+                <h3 class="title is-4">Step-Wise Retrieval (NDCG@10 Avg.)</h3>
+                <p class="content is-size-6">
+                  Provide the per-model averages for step-wise retrieval and I will fill this table.
+                </p>
+                <div class="table-container">
+                  <table class="table is-fullwidth tempo-table">
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Retriever</th>
+                        <th class="has-text-right">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>1</td><td>DiVeR</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>2</td><td>ReasonIR</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>3</td><td>Rader</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>4</td><td>E5</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>5</td><td>SFR</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>6</td><td>GritLM</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>7</td><td>Inst-L</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>8</td><td>Qwen</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>9</td><td>BGE</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>10</td><td>Contriever</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>11</td><td>SBERT</td><td class="has-text-right">TBD</td></tr>
+                      <tr><td>12</td><td>BM25</td><td class="has-text-right">TBD</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
